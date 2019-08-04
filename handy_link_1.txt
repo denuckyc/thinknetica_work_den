@@ -1,0 +1,6 @@
+http://tutorials.jumpstartlab.com/topics/environment/environment.html ---- настиройка окружения
+
+http://tutorials.jumpstartlab.com/projects/ruby_in_100_minutes.html#1.-instructions-&-interpreters ---- тутор по руби
+
+https://help.github.com/en/articles/adding-an-existing-project-to-github-using-the-command-line ---- создание репозитория и добавление файлов
+
