@@ -12,6 +12,6 @@ calendar = {
     November: 30,
     December: 31,
 }
-
+# Выборка по дням в месяце.
 thirty_days_month = calendar.select { |m, d| d == 30 }
 puts thirty_days_month
