@@ -1,9 +1,1 @@
-array = []
-s = 10
-
-while s <= 100
-  array.push(s)
-  s += 5
-end
-# Вывод заполненного массива.
-puts "#{array}"
+Range.new(10, 100).step(5) { |n| p n }

@@ -4,4 +4,4 @@ while (f = array[-1] + array[-2]) < 100
   array.push(f)
 end
 # Вывод заполненного массива.
-puts "#{array}"
+p array

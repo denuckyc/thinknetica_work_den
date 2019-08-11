@@ -1,28 +1,24 @@
 # Enter 'stop' to end this.
-list = Hash.new
+list = {}
 all_purchases = 0
 
 loop do
-  puts 'Product name:'
+  p 'Product name:'
   product = gets.chomp.to_s
   break if product == 'stop'
-  puts 'Amount of goods:'
+  p 'Price of goods:'
   price = gets.chomp.to_f
-  puts 'Quantity of goods:'
+  p 'Quantity of goods:'
   quantity = gets.chomp.to_f
-  amount = Hash.new
-  amount[price] = quantity
-  list[product] = amount
+  list[product] = { price: price, quantity: quantity }
 end
 
-puts list
+p list
 
-list.each do |product, amount|
-  amount.each do |price, quantity|
-    amount = price * quantity
-    puts "Total amount for product #{product} is #{amount} $."
+list.each do |product, value|
+    amount = value[:price] * value[:quantity]
+    p "Total amount for product #{product} is #{amount} $."
     all_purchases += amount
-  end
 end
 
-puts "Total amount of all purchases: #{all_purchases} $."
+p "Total amount of all purchases: #{all_purchases} $."
