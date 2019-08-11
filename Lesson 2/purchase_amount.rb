@@ -16,9 +16,9 @@ end
 p list
 
 list.each do |product, value|
-    amount = value[:price] * value[:quantity]
-    p "Total amount for product #{product} is #{amount} $."
-    all_purchases += amount
+  amount = value[:price] * value[:quantity]
+  p "Total amount for product #{product} is #{amount} $."
+  all_purchases += amount
 end
 
 p "Total amount of all purchases: #{all_purchases} $."
