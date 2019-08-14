@@ -1,0 +1,7 @@
+https://launchschool.com/books/oo_ruby/read/the_object_model ---- mini книга
+
+https://launchschool.com/books/oo_ruby/read/the_object_model ---- вопросы по ооп
+
+http://connect.thinknetica.com/t/oop-vzaimodejstvie-klassov-i-obektov/6632 ---- пояснение
+
+https://github.com/vkurennov/ror-beginner/blob/master/oop/car.rb ---- код скринкаста
