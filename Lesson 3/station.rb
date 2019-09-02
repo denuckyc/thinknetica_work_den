@@ -1,20 +1,26 @@
 class Station
-  @@trains = {}
-  def initialize(station_name)
-      @station_name = station_name
+    
+  attr_reader :name, :trains
+    
+  def initialize(name)
+    @name = name
+    @trains = []
   end
-  
-  def trains_on_station_at_that_moment(train, station_name)
-      time = Time.now
-      @@trains[train] = { station_name: @station_name, time: time }
-      p @@trains
+    
+  def take_train(train)
+    @trains << train
   end
-  
-  def trains_count(type)
-      @@trains.count { |train| train.type == type }
+    
+  def trains_on_station_at_that_moment
+    time = Time.now
+    p time, @name, @trains
   end
-  
-  def send_train(train)
-      @@trains.delete(train)
+    
+  def trains_list(type)
+    return @trains.collect { |train|  train if train.type == type }
+  end
+    
+  def depart_train(train)
+    @trains.delete(train)
   end
 end
