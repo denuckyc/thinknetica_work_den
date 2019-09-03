@@ -32,48 +32,44 @@ class Train
   
   def take_route(route)
     @route = route
-    @route.route_list[0].take_train(self)
+    @at_station = 0
+    @route.stations.first.take_train(self)
   end
     
   def current_station
-    @current_station = @route.route_list.find { |station| station.trains.include?(self) }
+    @route.stations[@at_station]
   end
     
   def previous_station
-    if current_station == @route.route_list[0]
-      false
+    if @route.stations.first == current_station
+      return nil
     else
-      @previous_station = @route.route_list[@route.route_list.index(current_station) - 1]
+      @route.stations[@at_station - 1]
     end
   end
     
   def next_station
-    if current_station == @route.route_list[-1]
-      false
+    if @route.stations.last == current_station
+      return nil
     else
-      @next_station = @route.route_list[@route.route_list.index(current_station) + 1]
+      @route.stations[@at_station + 1]
     end
-  end
-    
-  def motion(station)
-    @current_station.depart_train(self)
-    station.take_train(self)
   end
     
   def forward
-    if next_station
-      motion(@next_station)
-    else
-      false
-    end
+    return unless next_station
+    
+    current_station.depart_train(self)
+    next_station.take_train(self)
+    @at_station += 1
   end
     
   def backward
-    if previous_station
-      motion(@previous_station)
-    else
-      false
-    end
+    return unless previous_station
+    
+    current_station.depart_train(self)
+    previous_station.take_train(self)
+    @at_station -= 1
   end
     
   def show_route

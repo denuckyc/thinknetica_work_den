@@ -1,21 +1,21 @@
 class Route
     
-  attr_reader :route_list
+  attr_reader :stations
     
   def initialize(first, last)
-    @route_list = [first, last]
+    @stations = [first, last]
   end
     
   def add_station(station)
-    @route_list.insert(@route_list.size - 1, station)
+    @stations.insert(-2, station)
   end
     
   def delete_station(station)
-    @route_list.delete(station)
+    @stations.delete(station)
   end
     
   def station_list
-    @route_list.each do |r|
+    @stations.each do |r|
       p r
     end
   end

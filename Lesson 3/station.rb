@@ -17,7 +17,7 @@ class Station
   end
     
   def trains_list(type)
-    return @trains.collect { |train|  train if train.type == type }
+    @trains.select { |train|  train if train.type == type }
   end
     
   def depart_train(train)
