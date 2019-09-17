@@ -117,9 +117,13 @@ class Main
     puts 'Choose train that need to add corriage.'
     number_train = gets.chomp.to_i
     if @trains[number_train].type == :cargo
-      @trains[number_train].add_carriage(CargoWagon.new(:cargo))
+      puts 'Enter number corriage.'
+      number_carriage = gets.chomp.to_i
+      @trains[number_train].add_carriage(CargoCarriage.new(number_carriage))
     elsif @trains[number_train].type == :passenger
-      @trains[number_train].add_carriage(PassengerWagon.new(:passenger))
+      puts 'Enter number corriage.'
+      number_carriage = gets.chomp.to_i
+      @trains[number_train].add_carriage(PassengerCarriage.new(number_carriage))
     end
     puts "Number of carriage = #{@trains[number_train].count_carriages}"
   end

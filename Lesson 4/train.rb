@@ -58,23 +58,23 @@ class Train
     [previous_station, current_station, next_station]
   end
   
+  def last_station?
+    @route.stations.last == current_station
+  end
+
+  def first_station?
+    @route.stations.first == current_station
+  end
+  
   def current_station
-      @route.stations[@at_station]
+    @route.stations[@at_station]
   end
   
   def previous_station
-      if @route.stations.first == current_station
-          return nil
-          else
-          @route.stations[@at_station - 1]
-      end
+    @route.stations[@at_station - 1] unless first_station?
   end
   
   def next_station
-      if @route.stations.last == current_station
-          return nil
-          else
-          @route.stations[@at_station + 1]
-      end
+    @route.stations[@at_station + 1] unless last_station?
   end
 end
