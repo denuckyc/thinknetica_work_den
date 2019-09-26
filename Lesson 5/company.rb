@@ -1,4 +1,3 @@
 module Company
-	attr_accessor :company
+  attr_accessor :company
 end
-	
