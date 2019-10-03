@@ -182,7 +182,7 @@ class Main
     @stations.each.with_index { |station, index| puts "Number #{index} - #{station.name}" }
     puts 'Enter number of station to view which trains on it.'
     number_station = gets.chomp.to_i
-    stations[number_station].each_train { |train| puts "Number of train #{train.number}: (type - #{train.type}), number of carriages - #{train.count_carriages}"}
+    stations[number_station].each_train { |train| puts "Number of train #{train.number}: (type - #{train.type}, number of carriages - #{train.count_carriages})"}
   end
 
   def take_seat_or_fill_carriage
@@ -204,7 +204,7 @@ class Main
       puts 'Enter number of carriage that you need to take seat.'
       number = gets.chomp.to_i
       @passenger_carriages[number].take_seat
-      @passenger_carriages.each { |carriage| puts "(carriage - #{carriage.carriage_number}, available seats - #{carriage.available_seats}, ccupied seats - #{carriage.occupied_seats})" }
+      @passenger_carriages.each { |carriage| puts "(carriage - #{carriage.carriage_number}, available seats - #{carriage.available_seats}, occupied seats - #{carriage.occupied_seats})" }
     end          
   end  
 
@@ -215,7 +215,7 @@ class Main
     if @trains[number].type == :cargo
       @trains[number].each_carriage { |carriage| puts "(carriage #{carriage.carriage_number}, available volume - #{carriage.available_volume}, occupied volume - #{carriage.occupied_volume})" } 
     elsif @trains[number].type == :passenger
-      @trains[number].each_carriage { |carriage| puts "(carriage - #{carriage.carriage_number}, available seats - #{carriage.available_seats}, ccupied seats - #{carriage.occupied_seats})" }
+      @trains[number].each_carriage { |carriage| puts "(carriage - #{carriage.carriage_number}, available seats - #{carriage.available_seats}, occupied seats - #{carriage.occupied_seats})" }
     end
   end
   
